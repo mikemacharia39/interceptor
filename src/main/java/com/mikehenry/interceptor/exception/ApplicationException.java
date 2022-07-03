@@ -6,10 +6,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(value = HttpStatus.BAD_REQUEST)
 public class ApplicationException extends RuntimeException {
 
-    public ApplicationException() {
-        super();
-    }
-
     public ApplicationException(String message) {
         super(message);
     }

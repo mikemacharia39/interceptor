@@ -2,6 +2,7 @@ package com.mikehenry.interceptor.interceptor;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,11 +26,10 @@ public class OrderInterceptor implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-
         if (ex != null) {
-            log.error("Exception {}", ex.getLocalizedMessage());
+            log.error("Exception {}", ex.getMessage());
         }
 
-        log.info("After completion interceptor");
+        log.info("[afterCompletion][" + request + "][exception: " + ex + "]");
     }
 }
