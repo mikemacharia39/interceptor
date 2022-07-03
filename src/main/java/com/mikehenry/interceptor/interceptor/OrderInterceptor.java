@@ -25,6 +25,11 @@ public class OrderInterceptor implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+
+        if (ex != null) {
+            log.error("Exception {}", ex.getLocalizedMessage());
+        }
+
         log.info("After completion interceptor");
     }
 }
