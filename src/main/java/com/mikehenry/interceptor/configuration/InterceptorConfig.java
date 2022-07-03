@@ -10,6 +10,6 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new OrderInterceptor()).addPathPatterns("/create");
+        registry.addInterceptor(new OrderInterceptor()).addPathPatterns("/order/**");
     }
 }
