@@ -1,2 +1,7 @@
-package com.mikehenry.interceptor.service;public interface OrderService {
+package com.mikehenry.interceptor.service;
+
+import com.mikehenry.interceptor.model.Order;
+
+public interface OrderService {
+    void createOrder(Order order);
 }

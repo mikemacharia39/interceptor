@@ -10,5 +10,7 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public void createOrder(Order order) {
 
+        // Do something here
+        log.info("Order details: " + order.toString());
     }
 }
