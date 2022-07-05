@@ -1,6 +1,6 @@
 package com.mikehenry.interceptor.service;
 
-import com.mikehenry.interceptor.exception.ApplicationException;
+import com.mikehenry.interceptor.exception.OrderNotAllowedException;
 import com.mikehenry.interceptor.model.Order;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ public class OrderServiceImpl implements OrderService{
 
         // this is just an exception handling test
         if (order.getQuantity() >= 10) {
-            throw new ApplicationException("Quantity too large");
+            throw new OrderNotAllowedException("Quantity too large");
         }
     }
 }
